@@ -6,10 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{DAF7CFE3-5E68-4AE9-9FB8-FA3536B15C3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{66C609FA-BB5F-417B-982A-97E17D445E11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1} = {8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{FBF56C23-E446-4250-8326-1C76E2AC4605}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{83471FB8-C56A-4AEF-ADCF-1BE29A440CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSettings", "ProjectSettings\ProjectSettings.csproj", "{8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{83471FB8-C56A-4AEF-ADCF-1BE29A440CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83471FB8-C56A-4AEF-ADCF-1BE29A440CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83471FB8-C56A-4AEF-ADCF-1BE29A440CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEDBDC0-DA41-4B2E-89A0-5725BEF644C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
