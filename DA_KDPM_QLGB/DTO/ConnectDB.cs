@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -53,6 +54,25 @@ namespace DTO
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fs = File.Open("connect-db.dba", FileMode.Open, FileAccess.Read);
             return (ConnectDB)bf.Deserialize(fs);
+        }
+
+        public bool CheckConnection()
+        {
+            SqlConnection conn = new SqlConnection(string.Format("Data Source={0}; Initial Catalog={1}; User ID={2}; Password={3};", ServerName, Database, UserName, Password));
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool CheckDatabase()
+        {
+            return this.Database.Equals("QLSINHVIEN") ? true : false;
         }
     }
 }

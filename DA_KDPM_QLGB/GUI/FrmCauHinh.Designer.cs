@@ -126,6 +126,7 @@
             this.cbbDatabase.Name = "cbbDatabase";
             this.cbbDatabase.Size = new System.Drawing.Size(208, 21);
             this.cbbDatabase.TabIndex = 6;
+            this.cbbDatabase.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbbDatabase_MouseClick);
             // 
             // cbbServer
             // 

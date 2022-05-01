@@ -25,7 +25,7 @@ namespace ProjectSettings.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Database connection string (User type)")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source={0}; Initial Catalog={1}; User ID={2}; Password={3};")]
         public string UserConnectionString {
             get {
                 return ((string)(this["UserConnectionString"]));

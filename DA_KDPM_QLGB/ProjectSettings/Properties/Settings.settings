@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="UserConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Database connection string (User type)</Value>
+      <Value Profile="(Default)">Data Source={0}; Initial Catalog={1}; User ID={2}; Password={3};</Value>
     </Setting>
   </Settings>
 </SettingsFile>
