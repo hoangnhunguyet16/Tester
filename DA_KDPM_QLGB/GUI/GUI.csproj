@@ -51,6 +51,12 @@
     <Compile Include="FrmCauHinh.Designer.cs">
       <DependentUpon>FrmCauHinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDangNhap.Designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCauHinh.resx">
       <DependentUpon>FrmCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>
@@ -73,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +110,24 @@
       <Project>{8bedbdc0-da41-4b2e-89a0-5725bef644c1}</Project>
       <Name>ProjectSettings</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Icons\database.ico" />
+    <Content Include="Resources\Images\backup.png" />
+    <Content Include="Resources\Images\chuc-nang.png" />
+    <Content Include="Resources\Images\collapse-arrow_20px.png" />
+    <Content Include="Resources\Images\dang-xuat.png" />
+    <Content Include="Resources\Images\dat-bao.png" />
+    <Content Include="Resources\Images\expand arrow_20px.png" />
+    <Content Include="Resources\Images\he-thong.png" />
+    <Content Include="Resources\Images\loai-bao.png" />
+    <Content Include="Resources\Images\logo.png" />
+    <Content Include="Resources\Images\admin.png" />
+    <Content Include="Resources\Images\nguoi-dung.png" />
+    <Content Include="Resources\Images\quan-ly.png" />
+    <Content Include="Resources\Images\restore.png" />
+    <Content Include="Resources\Images\tai-khoan.png" />
+    <Content Include="Resources\Images\thong-ke.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

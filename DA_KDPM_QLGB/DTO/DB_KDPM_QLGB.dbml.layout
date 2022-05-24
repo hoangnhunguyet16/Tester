@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="DB_KDPM_QLGB">
+  <DataContextMoniker Name="/DB_KDPM_QLGBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b625b84c-f996-4bcc-b3d8-b08e21f160a4" absoluteBounds="6.25, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/ChiTietDatBao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c089a3a-8dda-4602-b095-384f495b37b0" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4474398b-426d-4227-b945-23afcb792ea1" absoluteBounds="3.5, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d001ff73-6b44-44ba-993c-bc0c61b6f751" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9b6e8c3-f52a-40f0-92ba-9979c1827ff1" absoluteBounds="3.5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/DatBao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac7389ee-cd8c-488a-acac-21b62bf47dc6" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2087992d-699c-4af2-95bf-2877a0f16b76" absoluteBounds="0.75, 1.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="219cc10b-9d36-437f-b104-c3af10feaaab" absoluteBounds="0.765, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d73784d2-a1e8-4f4b-9f77-f27efb423b8e" absoluteBounds="3.5, 6.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/LoaiBao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03ada677-cdab-4ad3-a927-832ddb291a89" absoluteBounds="3.515, 7.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b7224e2-d6be-4685-b68c-dbb4cec0232b" absoluteBounds="0.75, 3.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5fc3bca6-5e4c-4ebe-89a7-a238397ed9b8" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46f35944-1924-4105-b1f0-b99cd058c2c3" absoluteBounds="0.75, 7, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DB_KDPM_QLGBDataContext/PhanQuyen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bec252cb-dae8-426f-b822-c45ff2605b71" absoluteBounds="0.765, 7.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.76044840494792); (6.25 : 1.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB_KDPM_QLGBDataContext/DatBao/DatBao_ChiTietDatBao" />
+      <nodes>
+        <classShapeMoniker Id="b9b6e8c3-f52a-40f0-92ba-9979c1827ff1" />
+        <classShapeMoniker Id="b625b84c-f996-4bcc-b3d8-b08e21f160a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.98159912109375); (3.04166666666667 : 1.98159912109375 : JumpStart); (3.20833333333333 : 1.98159912109375 : JumpEnd); (3.5 : 1.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB_KDPM_QLGBDataContext/KhachHang/KhachHang_DatBao" />
+      <nodes>
+        <classShapeMoniker Id="2087992d-699c-4af2-95bf-2877a0f16b76" />
+        <classShapeMoniker Id="b9b6e8c3-f52a-40f0-92ba-9979c1827ff1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.56814697265625); (7.25 : 7.56814697265625); (7.25 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB_KDPM_QLGBDataContext/LoaiBao/LoaiBao_ChiTietDatBao" />
+      <nodes>
+        <classShapeMoniker Id="d73784d2-a1e8-4f4b-9f77-f27efb423b8e" />
+        <classShapeMoniker Id="b625b84c-f996-4bcc-b3d8-b08e21f160a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.76044840494792); (3.04166666666667 : 4.76044840494792 : JumpStart); (3.20833333333333 : 4.76044840494792 : JumpEnd); (3.5 : 4.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB_KDPM_QLGBDataContext/NhanVien/NhanVien_TaiKhoan" />
+      <nodes>
+        <classShapeMoniker Id="0b7224e2-d6be-4685-b68c-dbb4cec0232b" />
+        <classShapeMoniker Id="4474398b-426d-4227-b945-23afcb792ea1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.875); (3.125 : 3.5); (3.125 : 1.33454756054688); (3.5 : 1.33454756054688)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB_KDPM_QLGBDataContext/NhanVien/NhanVien_DatBao" />
+      <nodes>
+        <classShapeMoniker Id="0b7224e2-d6be-4685-b68c-dbb4cec0232b" />
+        <classShapeMoniker Id="b9b6e8c3-f52a-40f0-92ba-9979c1827ff1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7); (3.125 : 6.625); (3.125 : 4.22397220247396); (3.5 : 4.22397220247396)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DB_KDPM_QLGBDataContext/PhanQuyen/PhanQuyen_TaiKhoan" />
+      <nodes>
+        <classShapeMoniker Id="46f35944-1924-4105-b1f0-b99cd058c2c3" />
+        <classShapeMoniker Id="4474398b-426d-4227-b945-23afcb792ea1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

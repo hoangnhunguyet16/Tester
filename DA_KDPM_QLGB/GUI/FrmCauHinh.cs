@@ -29,7 +29,7 @@ namespace GUI
 
             if (config.Equals("modify"))
             {
-                btnThoat.Text = "Trang chủ";
+                btnThoat.Text = "Đăng nhập";
                 btnThoat.Enabled = false;
             }
         }
@@ -118,7 +118,7 @@ namespace GUI
             if (config.Equals("modify"))
             {
                 this.Hide();
-                FrmTrangChu frm = new FrmTrangChu();
+                FrmDangNhap frm = new FrmDangNhap();
                 frm.Closed += (s, args) => this.Close();
                 frm.Show();
             }

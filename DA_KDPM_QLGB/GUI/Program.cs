@@ -49,7 +49,7 @@ namespace GUI
                     else
                     {
                         Helper.SaveUserConfig(connDB);
-                        frm = new FrmTrangChu();
+                        frm = new FrmDangNhap();
                     }
                 }
                 else
@@ -59,7 +59,7 @@ namespace GUI
             }
             else
             {
-                frm = new FrmTrangChu();
+                frm = new FrmDangNhap();
             }
 
             return frm;

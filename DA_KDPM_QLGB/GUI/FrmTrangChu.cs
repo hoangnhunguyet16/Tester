@@ -7,14 +7,106 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
 namespace GUI
 {
     public partial class FrmTrangChu : Form
     {
-        public FrmTrangChu()
+        TaiKhoan tk = new TaiKhoan();
+        Utilities utl = new Utilities();
+
+        public FrmTrangChu(TaiKhoan tk)
         {
+            this.tk = tk;
             InitializeComponent();
+        }
+
+        #region Sub menu
+        private void ShowSubMenu(Panel pnl)
+        {
+            if (pnl.Visible == false)
+            {
+                HideSubMenu();
+                pnl.Visible = true;
+            }
+            else
+                pnl.Visible = false;
+        }
+
+        private void HideSubMenu()
+        {
+            if (pnlQuanLySubMenu.Visible == true)
+                pnlQuanLySubMenu.Visible = false;
+
+            if (pnlChucNangSubMenu.Visible == true)
+                pnlChucNangSubMenu.Visible = false;
+
+            if (pnlHeThongSubMenu.Visible == true)
+                pnlHeThongSubMenu.Visible = false;
+        }
+
+        
+        private void btnQuanLy_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlQuanLySubMenu);
+        }
+
+        private void btnChucNang_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlChucNangSubMenu);
+        }
+
+        private void btnHeThong_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlHeThongSubMenu);
+        }
+        #endregion
+        
+        private void btnLoaiBao_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnDatBao_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void FrmTrangChu_Load(object sender, EventArgs e)
+        {
+            HideSubMenu();
         }
     }
 }

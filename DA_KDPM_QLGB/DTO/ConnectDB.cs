@@ -72,7 +72,7 @@ namespace DTO
 
         public bool CheckDatabase()
         {
-            return this.Database.Equals("QLSINHVIEN") ? true : false;
+            return this.Database.Equals("DB_KDPM_QLGB") ? true : false;
         }
     }
 }
