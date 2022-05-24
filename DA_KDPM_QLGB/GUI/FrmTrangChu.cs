@@ -23,6 +23,12 @@ namespace GUI
             InitializeComponent();
         }
 
+        private void FrmTrangChu_Load(object sender, EventArgs e)
+        {
+            lblTaiKhoan.Text = string.Format("Xin chào {0}", tk.TenDangNhap);
+            HideSubMenu();
+        }
+
         #region Sub menu
         private void ShowSubMenu(Panel pnl)
         {
@@ -66,6 +72,8 @@ namespace GUI
         
         private void btnLoaiBao_Click(object sender, EventArgs e)
         {
+            FrmLoaiBao frm = new FrmLoaiBao();
+            utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 
@@ -104,9 +112,18 @@ namespace GUI
             HideSubMenu();
         }
 
-        private void FrmTrangChu_Load(object sender, EventArgs e)
+        private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
+            DialogResult rs = MessageBox.Show("Xác nhận đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (rs == DialogResult.Yes)
+            {
+                this.SetVisibleCore(false);
+                FrmDangNhap frm = new FrmDangNhap();
+                frm.Show();
+            }
+
+            return;
+            
         }
     }
 }
