@@ -98,6 +98,8 @@ namespace GUI
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            FrmThongKe frm = new FrmThongKe();
+            utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 

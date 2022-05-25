@@ -115,3 +115,8 @@ insert into LoaiBao values
 (N'Nhật báo Buổi Sáng', 5500),
 (N'Buổi Sáng Cuối Tuần', 14500)
 
+create view view_ThongKeSoLuongDatLoaiBao
+(
+
+)
+

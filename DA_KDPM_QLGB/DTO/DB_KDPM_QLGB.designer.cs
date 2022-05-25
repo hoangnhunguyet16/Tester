@@ -138,6 +138,14 @@ namespace DTO
 				return this.GetTable<ChiTietDatBao>();
 			}
 		}
+		
+		public System.Data.Linq.Table<view_ThongKeSoLuongDatLoaiBao> view_ThongKeSoLuongDatLoaiBaos
+		{
+			get
+			{
+				return this.GetTable<view_ThongKeSoLuongDatLoaiBao>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TaiKhoan")]
@@ -1632,6 +1640,51 @@ namespace DTO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.view_ThongKeSoLuongDatLoaiBao")]
+	public partial class view_ThongKeSoLuongDatLoaiBao
+	{
+		
+		private int _MaLoaiBao;
+		
+		private System.Nullable<int> _SoLuong;
+		
+		public view_ThongKeSoLuongDatLoaiBao()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiBao", DbType="Int NOT NULL")]
+		public int MaLoaiBao
+		{
+			get
+			{
+				return this._MaLoaiBao;
+			}
+			set
+			{
+				if ((this._MaLoaiBao != value))
+				{
+					this._MaLoaiBao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
 			}
 		}
 	}

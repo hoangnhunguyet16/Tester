@@ -74,4 +74,10 @@
       <Association Name="LoaiBao_ChiTietDatBao" Member="LoaiBao" ThisKey="MaLoaiBao" OtherKey="MaLoaiBao" Type="LoaiBao" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.view_ThongKeSoLuongDatLoaiBao" Member="view_ThongKeSoLuongDatLoaiBaos">
+    <Type Name="view_ThongKeSoLuongDatLoaiBao">
+      <Column Name="MaLoaiBao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
