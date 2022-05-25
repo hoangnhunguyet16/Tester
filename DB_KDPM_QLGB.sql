@@ -64,12 +64,13 @@ create table ChiTietDatBao
 (
 	MaDatBao int,
 	MaLoaiBao int,
-	SoKy int,
+	NgayBatDau datetime,
+	NgayKetThuc datetime,
 	SoLuong int,
 	ThanhTien float,
 	constraint PK_ChiTietDatBao primary key (MaDatBao, MaLoaiBao)
 )
- 
+
 alter table TaiKhoan add
 constraint FK_TaiKhoan_NhanVien foreign key (MaNV) references NhanVien (MaNV),
 constraint FK_TaiKhoan_PhanQuyen foreign key (MaQuyen) references PhanQuyen (MaQuyen)
@@ -113,3 +114,4 @@ insert into KhachHang values
 insert into LoaiBao values
 (N'Nhật báo Buổi Sáng', 5500),
 (N'Buổi Sáng Cuối Tuần', 14500)
+
