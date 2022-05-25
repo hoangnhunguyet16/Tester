@@ -123,7 +123,6 @@ namespace GUI
             }
 
             return;
-            
         }
     }
 }
