@@ -84,6 +84,8 @@ namespace GUI
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
+            FrmKhachHang frm = new FrmKhachHang();
+            utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 
