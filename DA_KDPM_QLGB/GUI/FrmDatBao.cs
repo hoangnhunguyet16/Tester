@@ -18,6 +18,7 @@ namespace GUI
         LoaiBaoBLL lbBLL = new LoaiBaoBLL();
         DatBaoBLL dbBLL = new DatBaoBLL();
         ChiTietDatBaoBLL ctdbBLL = new ChiTietDatBaoBLL();
+        Utilities utl = new Utilities();
 
         int stt = 0;
         int maNV = 0;
@@ -31,6 +32,19 @@ namespace GUI
         {
             this.maNV = maNV;
             InitializeComponent();
+        }
+
+        private void Default()
+        {
+            ctdbList.Clear();
+            lsvDLCTDB.Items.Clear();
+            grbThongTinKH.Controls.OfType<TextBox>().ToList().ForEach(t => t.Clear());
+            kh = null;
+            tongTien = stt = 0;
+            btnXacNhan.Text = "Xác nhận";
+            txtSoLuong.Clear();
+            lblTongTienThanhToan.Text = "";
+            grbThongTinKH.Enabled = cmbKhachHang.Enabled = true;
         }
 
         private void LoadDL()
@@ -60,7 +74,7 @@ namespace GUI
                     cmbKhachHang.Focus();
                     return;
                 }
- 
+
                 btnXacNhan.Text = "Hủy";
                 grbThongTinKH.Enabled = cmbKhachHang.Enabled = false;
             }
@@ -110,7 +124,17 @@ namespace GUI
             stt = lsvDLCTDB.Items.Count + 1;
             int soLuong = int.Parse(txtSoLuong.Text);
             double giaTien = (double)lb.GiaTien;
-            double soKy = (dtpNgayKetThuc.Value - dtpNgayBatDau.Value).TotalDays + 1;
+            double soKy = 0;
+
+            if (lb.TenLoaiBao.Contains("Cuối Tuần"))
+            {
+                soKy = utl.TimSoLuongNgayCuoiTuan(dtpNgayBatDau.Value, dtpNgayKetThuc.Value);
+            }
+            else
+            {
+                soKy = (dtpNgayKetThuc.Value - dtpNgayBatDau.Value).TotalDays + 1;
+            }
+
             double thanhTien = soLuong * (giaTien * soKy);
 
             ChiTietDatBao ctdbThemMoi = new ChiTietDatBao()
@@ -168,7 +192,7 @@ namespace GUI
             }
 
             tongTien = 0;
-            foreach(ChiTietDatBao ctdb in ctdbList)
+            foreach (ChiTietDatBao ctdb in ctdbList)
             {
                 tongTien += (double)ctdb.ThanhTien;
             }
@@ -247,6 +271,7 @@ namespace GUI
                 ctdbList.ForEach(t => ctdbBLL.ThemChiTietDatBao(t));
 
                 MessageBox.Show("Đặt báo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Default();
             }
             catch (Exception)
             {

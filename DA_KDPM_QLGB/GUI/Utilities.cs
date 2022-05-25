@@ -22,5 +22,17 @@ namespace GUI
 
             frm.Show();
         }
+
+        public int TimSoLuongNgayCuoiTuan(DateTime ngayBatDau, DateTime ngayKetThuc)
+        {
+            DateTime fdate = ngayKetThuc;
+            DateTime sdate = ngayBatDau;
+            TimeSpan ts = fdate - sdate;
+            var sundays = ((ts.TotalDays / 7) + (sdate.DayOfWeek == DayOfWeek.Sunday || fdate.DayOfWeek == DayOfWeek.Sunday || fdate.DayOfWeek > sdate.DayOfWeek ? 1 : 0));
+
+            sundays = Math.Round(sundays, MidpointRounding.AwayFromZero);
+
+            return (int)sundays;
+        }
     }
 }
