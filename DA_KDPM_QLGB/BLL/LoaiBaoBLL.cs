@@ -24,6 +24,11 @@ namespace BLL
             return lbDAL.GetDLLoaiBaoTheoTen(ten);
         }
 
+        public LoaiBao LoadDLLoaiBaoTheoMaLoaiBao(int maLoaiBao)
+        {
+            return lbDAL.GetDLLoaiBaoTheoMaLoaiBao(maLoaiBao);
+        }
+
         public bool ThemLoaiBao(LoaiBao lb)
         {
             return lbDAL.ThemLoaiBao(lb);

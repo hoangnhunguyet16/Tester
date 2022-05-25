@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_KDPM_QLGB" Class="DB_KDPM_QLGBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DANGTRI-LAPTOP\SQLEXPRESS;Initial Catalog=DB_KDPM_QLGB;Persist Security Info=True;User ID=sa" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="DB_KDPM_QLGBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ChiTietDatBao" Member="ChiTietDatBaos">
-    <Type Name="ChiTietDatBao">
-      <Column Name="MaDatBao" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaLoaiBao" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SoKy" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="DatBao_ChiTietDatBao" Member="DatBao" ThisKey="MaDatBao" OtherKey="MaDatBao" Type="DatBao" IsForeignKey="true" />
-      <Association Name="LoaiBao_ChiTietDatBao" Member="LoaiBao" ThisKey="MaLoaiBao" OtherKey="MaLoaiBao" Type="LoaiBao" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
     <Type Name="TaiKhoan">
       <Column Name="MaTaiKhoan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -71,6 +60,18 @@
       <Column Name="TenQuyen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="PhanQuyen_TaiKhoan" Member="TaiKhoans" ThisKey="MaQuyen" OtherKey="MaQuyen" Type="TaiKhoan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietDatBao" Member="ChiTietDatBaos">
+    <Type Name="ChiTietDatBao">
+      <Column Name="MaDatBao" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLoaiBao" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DatBao_ChiTietDatBao" Member="DatBao" ThisKey="MaDatBao" OtherKey="MaDatBao" Type="DatBao" IsForeignKey="true" />
+      <Association Name="LoaiBao_ChiTietDatBao" Member="LoaiBao" ThisKey="MaLoaiBao" OtherKey="MaLoaiBao" Type="LoaiBao" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

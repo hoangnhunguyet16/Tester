@@ -24,6 +24,11 @@ namespace DAL
             return dt.LoaiBaos.Where(t => t.TenLoaiBao.Contains(ten)).ToList();
         }
 
+        public LoaiBao GetDLLoaiBaoTheoMaLoaiBao(int maLoaiBao)
+        {
+            return dt.LoaiBaos.Where(t => t.MaLoaiBao == maLoaiBao).Single();
+        }
+
         public bool ThemLoaiBao(LoaiBao lb)
         {
             try

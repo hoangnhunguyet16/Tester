@@ -91,6 +91,8 @@ namespace GUI
 
         private void btnDatBao_Click(object sender, EventArgs e)
         {
+            FrmDatBao frm = new FrmDatBao((int)tk.MaNV);
+            utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 

@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDatBaoBLL.cs" />
+    <Compile Include="DatBaoBLL.cs" />
     <Compile Include="KhachHangBLL.cs" />
     <Compile Include="LoaiBaoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

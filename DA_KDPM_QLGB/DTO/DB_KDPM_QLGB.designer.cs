@@ -30,9 +30,6 @@ namespace DTO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertChiTietDatBao(ChiTietDatBao instance);
-    partial void UpdateChiTietDatBao(ChiTietDatBao instance);
-    partial void DeleteChiTietDatBao(ChiTietDatBao instance);
     partial void InsertTaiKhoan(TaiKhoan instance);
     partial void UpdateTaiKhoan(TaiKhoan instance);
     partial void DeleteTaiKhoan(TaiKhoan instance);
@@ -51,6 +48,9 @@ namespace DTO
     partial void InsertPhanQuyen(PhanQuyen instance);
     partial void UpdatePhanQuyen(PhanQuyen instance);
     partial void DeletePhanQuyen(PhanQuyen instance);
+    partial void InsertChiTietDatBao(ChiTietDatBao instance);
+    partial void UpdateChiTietDatBao(ChiTietDatBao instance);
+    partial void DeleteChiTietDatBao(ChiTietDatBao instance);
     #endregion
 		
 		public DB_KDPM_QLGBDataContext() : 
@@ -81,14 +81,6 @@ namespace DTO
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<ChiTietDatBao> ChiTietDatBaos
-		{
-			get
-			{
-				return this.GetTable<ChiTietDatBao>();
-			}
 		}
 		
 		public System.Data.Linq.Table<TaiKhoan> TaiKhoans
@@ -138,244 +130,12 @@ namespace DTO
 				return this.GetTable<PhanQuyen>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietDatBao")]
-	public partial class ChiTietDatBao : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaDatBao;
-		
-		private int _MaLoaiBao;
-		
-		private System.Nullable<int> _SoKy;
-		
-		private System.Nullable<int> _SoLuong;
-		
-		private System.Nullable<double> _ThanhTien;
-		
-		private EntityRef<DatBao> _DatBao;
-		
-		private EntityRef<LoaiBao> _LoaiBao;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDatBaoChanging(int value);
-    partial void OnMaDatBaoChanged();
-    partial void OnMaLoaiBaoChanging(int value);
-    partial void OnMaLoaiBaoChanged();
-    partial void OnSoKyChanging(System.Nullable<int> value);
-    partial void OnSoKyChanged();
-    partial void OnSoLuongChanging(System.Nullable<int> value);
-    partial void OnSoLuongChanged();
-    partial void OnThanhTienChanging(System.Nullable<double> value);
-    partial void OnThanhTienChanged();
-    #endregion
-		
-		public ChiTietDatBao()
-		{
-			this._DatBao = default(EntityRef<DatBao>);
-			this._LoaiBao = default(EntityRef<LoaiBao>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDatBao", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaDatBao
+		public System.Data.Linq.Table<ChiTietDatBao> ChiTietDatBaos
 		{
 			get
 			{
-				return this._MaDatBao;
-			}
-			set
-			{
-				if ((this._MaDatBao != value))
-				{
-					if (this._DatBao.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaDatBaoChanging(value);
-					this.SendPropertyChanging();
-					this._MaDatBao = value;
-					this.SendPropertyChanged("MaDatBao");
-					this.OnMaDatBaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiBao", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaLoaiBao
-		{
-			get
-			{
-				return this._MaLoaiBao;
-			}
-			set
-			{
-				if ((this._MaLoaiBao != value))
-				{
-					if (this._LoaiBao.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaLoaiBaoChanging(value);
-					this.SendPropertyChanging();
-					this._MaLoaiBao = value;
-					this.SendPropertyChanged("MaLoaiBao");
-					this.OnMaLoaiBaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoKy", DbType="Int")]
-		public System.Nullable<int> SoKy
-		{
-			get
-			{
-				return this._SoKy;
-			}
-			set
-			{
-				if ((this._SoKy != value))
-				{
-					this.OnSoKyChanging(value);
-					this.SendPropertyChanging();
-					this._SoKy = value;
-					this.SendPropertyChanged("SoKy");
-					this.OnSoKyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
-		public System.Nullable<int> SoLuong
-		{
-			get
-			{
-				return this._SoLuong;
-			}
-			set
-			{
-				if ((this._SoLuong != value))
-				{
-					this.OnSoLuongChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuong = value;
-					this.SendPropertyChanged("SoLuong");
-					this.OnSoLuongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTien", DbType="Float")]
-		public System.Nullable<double> ThanhTien
-		{
-			get
-			{
-				return this._ThanhTien;
-			}
-			set
-			{
-				if ((this._ThanhTien != value))
-				{
-					this.OnThanhTienChanging(value);
-					this.SendPropertyChanging();
-					this._ThanhTien = value;
-					this.SendPropertyChanged("ThanhTien");
-					this.OnThanhTienChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatBao_ChiTietDatBao", Storage="_DatBao", ThisKey="MaDatBao", OtherKey="MaDatBao", IsForeignKey=true)]
-		public DatBao DatBao
-		{
-			get
-			{
-				return this._DatBao.Entity;
-			}
-			set
-			{
-				DatBao previousValue = this._DatBao.Entity;
-				if (((previousValue != value) 
-							|| (this._DatBao.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DatBao.Entity = null;
-						previousValue.ChiTietDatBaos.Remove(this);
-					}
-					this._DatBao.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDatBaos.Add(this);
-						this._MaDatBao = value.MaDatBao;
-					}
-					else
-					{
-						this._MaDatBao = default(int);
-					}
-					this.SendPropertyChanged("DatBao");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiBao_ChiTietDatBao", Storage="_LoaiBao", ThisKey="MaLoaiBao", OtherKey="MaLoaiBao", IsForeignKey=true)]
-		public LoaiBao LoaiBao
-		{
-			get
-			{
-				return this._LoaiBao.Entity;
-			}
-			set
-			{
-				LoaiBao previousValue = this._LoaiBao.Entity;
-				if (((previousValue != value) 
-							|| (this._LoaiBao.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LoaiBao.Entity = null;
-						previousValue.ChiTietDatBaos.Remove(this);
-					}
-					this._LoaiBao.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDatBaos.Add(this);
-						this._MaLoaiBao = value.MaLoaiBao;
-					}
-					else
-					{
-						this._MaLoaiBao = default(int);
-					}
-					this.SendPropertyChanged("LoaiBao");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<ChiTietDatBao>();
 			}
 		}
 	}
@@ -1609,6 +1369,270 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.PhanQuyen = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietDatBao")]
+	public partial class ChiTietDatBao : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaDatBao;
+		
+		private int _MaLoaiBao;
+		
+		private System.Nullable<System.DateTime> _NgayBatDau;
+		
+		private System.Nullable<System.DateTime> _NgayKetThuc;
+		
+		private System.Nullable<int> _SoLuong;
+		
+		private System.Nullable<double> _ThanhTien;
+		
+		private EntityRef<DatBao> _DatBao;
+		
+		private EntityRef<LoaiBao> _LoaiBao;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDatBaoChanging(int value);
+    partial void OnMaDatBaoChanged();
+    partial void OnMaLoaiBaoChanging(int value);
+    partial void OnMaLoaiBaoChanged();
+    partial void OnNgayBatDauChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayBatDauChanged();
+    partial void OnNgayKetThucChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayKetThucChanged();
+    partial void OnSoLuongChanging(System.Nullable<int> value);
+    partial void OnSoLuongChanged();
+    partial void OnThanhTienChanging(System.Nullable<double> value);
+    partial void OnThanhTienChanged();
+    #endregion
+		
+		public ChiTietDatBao()
+		{
+			this._DatBao = default(EntityRef<DatBao>);
+			this._LoaiBao = default(EntityRef<LoaiBao>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDatBao", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaDatBao
+		{
+			get
+			{
+				return this._MaDatBao;
+			}
+			set
+			{
+				if ((this._MaDatBao != value))
+				{
+					if (this._DatBao.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaDatBaoChanging(value);
+					this.SendPropertyChanging();
+					this._MaDatBao = value;
+					this.SendPropertyChanged("MaDatBao");
+					this.OnMaDatBaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiBao", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaLoaiBao
+		{
+			get
+			{
+				return this._MaLoaiBao;
+			}
+			set
+			{
+				if ((this._MaLoaiBao != value))
+				{
+					if (this._LoaiBao.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLoaiBaoChanging(value);
+					this.SendPropertyChanging();
+					this._MaLoaiBao = value;
+					this.SendPropertyChanged("MaLoaiBao");
+					this.OnMaLoaiBaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBatDau", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayBatDau
+		{
+			get
+			{
+				return this._NgayBatDau;
+			}
+			set
+			{
+				if ((this._NgayBatDau != value))
+				{
+					this.OnNgayBatDauChanging(value);
+					this.SendPropertyChanging();
+					this._NgayBatDau = value;
+					this.SendPropertyChanged("NgayBatDau");
+					this.OnNgayBatDauChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKetThuc", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayKetThuc
+		{
+			get
+			{
+				return this._NgayKetThuc;
+			}
+			set
+			{
+				if ((this._NgayKetThuc != value))
+				{
+					this.OnNgayKetThucChanging(value);
+					this.SendPropertyChanging();
+					this._NgayKetThuc = value;
+					this.SendPropertyChanged("NgayKetThuc");
+					this.OnNgayKetThucChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this.OnSoLuongChanging(value);
+					this.SendPropertyChanging();
+					this._SoLuong = value;
+					this.SendPropertyChanged("SoLuong");
+					this.OnSoLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTien", DbType="Float")]
+		public System.Nullable<double> ThanhTien
+		{
+			get
+			{
+				return this._ThanhTien;
+			}
+			set
+			{
+				if ((this._ThanhTien != value))
+				{
+					this.OnThanhTienChanging(value);
+					this.SendPropertyChanging();
+					this._ThanhTien = value;
+					this.SendPropertyChanged("ThanhTien");
+					this.OnThanhTienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatBao_ChiTietDatBao", Storage="_DatBao", ThisKey="MaDatBao", OtherKey="MaDatBao", IsForeignKey=true)]
+		public DatBao DatBao
+		{
+			get
+			{
+				return this._DatBao.Entity;
+			}
+			set
+			{
+				DatBao previousValue = this._DatBao.Entity;
+				if (((previousValue != value) 
+							|| (this._DatBao.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DatBao.Entity = null;
+						previousValue.ChiTietDatBaos.Remove(this);
+					}
+					this._DatBao.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietDatBaos.Add(this);
+						this._MaDatBao = value.MaDatBao;
+					}
+					else
+					{
+						this._MaDatBao = default(int);
+					}
+					this.SendPropertyChanged("DatBao");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiBao_ChiTietDatBao", Storage="_LoaiBao", ThisKey="MaLoaiBao", OtherKey="MaLoaiBao", IsForeignKey=true)]
+		public LoaiBao LoaiBao
+		{
+			get
+			{
+				return this._LoaiBao.Entity;
+			}
+			set
+			{
+				LoaiBao previousValue = this._LoaiBao.Entity;
+				if (((previousValue != value) 
+							|| (this._LoaiBao.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LoaiBao.Entity = null;
+						previousValue.ChiTietDatBaos.Remove(this);
+					}
+					this._LoaiBao.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietDatBaos.Add(this);
+						this._MaLoaiBao = value.MaLoaiBao;
+					}
+					else
+					{
+						this._MaLoaiBao = default(int);
+					}
+					this.SendPropertyChanged("LoaiBao");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

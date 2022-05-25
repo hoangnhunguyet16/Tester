@@ -31,6 +31,11 @@ namespace DAL
                 ).ToList();
         }
 
+        public KhachHang GetDLKhachHangTheoMaKH(int maKH)
+        {
+            return dt.KhachHangs.Where(t => t.MaKH == maKH).Single();
+        }
+
         public bool ThemKhachHang(KhachHang kh)
         {
             try

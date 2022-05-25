@@ -24,6 +24,11 @@ namespace BLL
             return khDAL.GetDLKhachHangTheoTen(ten);
         }
 
+        public KhachHang LoadDLKhachHangTheoMaKH(int maKH)
+        {
+            return khDAL.GetDLKhachHangTheoMaKH(maKH);
+        }
+
         public bool ThemKhachHang(KhachHang kh)
         {
             return khDAL.ThemKhachHang(kh);
