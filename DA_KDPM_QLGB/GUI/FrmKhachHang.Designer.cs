@@ -113,7 +113,7 @@
             this.grbThongTin.Size = new System.Drawing.Size(362, 421);
             this.grbThongTin.TabIndex = 4;
             this.grbThongTin.TabStop = false;
-            this.grbThongTin.Text = "Thông tin Khách hàng";
+            this.grbThongTin.Text = "Thông tin khách hàng";
             // 
             // txtEmail
             // 

@@ -101,6 +101,8 @@ namespace GUI
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
+            FrmBackup frm = new FrmBackup();
+            utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 
