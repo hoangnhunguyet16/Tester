@@ -119,6 +119,78 @@ namespace GUI
             lb = lbBLL.LoadDLLoaiBaoTheoMaLoaiBao(int.Parse(maLoaiBao));
         }
 
+        private void TinhTongTienThanhToan()
+        {
+            tongTien = 0;
+            foreach (ChiTietDatBao ctdb in ctdbList)
+            {
+                tongTien += (double)ctdb.ThanhTien;
+            }
+
+            lblTongTienThanhToan.Text = String.Format("{0:#,###,###.##}", tongTien);
+        }
+
+        private void XoaChiTietDatBao()
+        {
+            int maLoaiBao = int.Parse(cmbLoaiBao.SelectedValue.ToString());
+            ChiTietDatBao ctdbXoa = ctdbList.Where(t => t.MaLoaiBao == maLoaiBao).Single();
+            ctdbList.Remove(ctdbXoa);
+
+            ListViewItem item = lsvDLCTDB.SelectedItems[0];
+            lsvDLCTDB.Items.Remove(item);
+
+            TinhTongTienThanhToan();
+        }
+
+        private void SuaChiTietDatBao()
+        {
+            int maLoaiBao = int.Parse(cmbLoaiBao.SelectedValue.ToString());
+            ChiTietDatBao ctdbSua = ctdbList.Where(t => t.MaLoaiBao == maLoaiBao).Single();
+            LoaiBao lbSua = lbBLL.LoadDLLoaiBaoTheoMaLoaiBao(maLoaiBao);
+
+            ctdbSua.SoLuong = int.Parse(txtSoLuong.Text);
+            ctdbSua.NgayBatDau = dtpNgayBatDau.Value;
+            ctdbSua.NgayKetThuc = dtpNgayKetThuc.Value;
+
+            double soKy = 0;
+            if (cmbLoaiBao.Text.Contains("Cuối Tuần"))
+            {
+                soKy = utl.TimSoLuongNgayCuoiTuan(ctdbSua.NgayBatDau.Value, ctdbSua.NgayKetThuc.Value);
+            }
+            else
+            {
+                soKy = (ctdbSua.NgayKetThuc.Value - ctdbSua.NgayBatDau.Value).TotalDays + 1;
+            }
+
+            double thanhTien = (double)ctdbSua.SoLuong * ((double)lb.GiaTien * soKy);
+            ctdbSua.ThanhTien = thanhTien;
+
+            lsvDLCTDB.Items.Clear();
+            stt = 0;
+            foreach (ChiTietDatBao ctdb in ctdbList)
+            {
+                stt = lsvDLCTDB.Items.Count + 1;
+                double soKySua = (ctdb.NgayKetThuc.Value - ctdb.NgayBatDau.Value).TotalDays + 1;
+                int soLuongSua = (int)ctdb.SoLuong;
+                double thanhTienSua = (double)ctdb.ThanhTien;
+                LoaiBao lbS = lbBLL.LoadDLLoaiBaoTheoMaLoaiBao(ctdb.MaLoaiBao);
+
+                ListViewItem item = new ListViewItem(new[] 
+                        {
+                            stt.ToString(),
+                            lbS.TenLoaiBao,
+                            lbS.GiaTien.ToString(),
+                            soKySua.ToString(),
+                            soLuongSua.ToString(),
+                            thanhTienSua.ToString()
+                        });
+
+                lsvDLCTDB.Items.Add(item);
+            }
+
+            TinhTongTienThanhToan();
+        }
+
         private void TaoVaThemChiTietDaBao()
         {
             stt = lsvDLCTDB.Items.Count + 1;
@@ -191,13 +263,7 @@ namespace GUI
                 lsvDLCTDB.Items.Add(item);
             }
 
-            tongTien = 0;
-            foreach (ChiTietDatBao ctdb in ctdbList)
-            {
-                tongTien += (double)ctdb.ThanhTien;
-            }
-
-            lblTongTienThanhToan.Text = String.Format("{0:#,###,###.##}", tongTien);
+            TinhTongTienThanhToan();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -219,12 +285,30 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (lsvDLCTDB.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn chi tiết đặt báo cần xóa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            XoaChiTietDatBao();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (lsvDLCTDB.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn chi tiết đặt báo cần sửa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (txtSoLuong.Text.Length == 0)
+            {
+                MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SuaChiTietDatBao();
         }
 
         private void TestDuLieu()
@@ -277,6 +361,21 @@ namespace GUI
             {
                 MessageBox.Show("Đặt báo thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
+            }
+        }
+
+        private void lsvDLCTDB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvDLCTDB.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lsvDLCTDB.SelectedItems[0];
+                cmbLoaiBao.Text = item.SubItems[1].Text;
+                txtSoLuong.Text = item.SubItems[4].Text;
+
+                ChiTietDatBao ctdb = ctdbList.Where(t => t.MaLoaiBao == int.Parse(cmbLoaiBao.SelectedValue.ToString())).Single();
+                dtpNgayBatDau.Value = ctdb.NgayBatDau.Value;
+                dtpNgayKetThuc.MinDate = ctdb.NgayBatDau.Value;
+                dtpNgayKetThuc.Value = ctdb.NgayKetThuc.Value;
             }
         }
     }

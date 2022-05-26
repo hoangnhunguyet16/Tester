@@ -146,6 +146,7 @@
             this.lsvDLCTDB.TabIndex = 29;
             this.lsvDLCTDB.UseCompatibleStateImageBehavior = false;
             this.lsvDLCTDB.View = System.Windows.Forms.View.Details;
+            this.lsvDLCTDB.SelectedIndexChanged += new System.EventHandler(this.lsvDLCTDB_SelectedIndexChanged);
             // 
             // colSTT
             // 
