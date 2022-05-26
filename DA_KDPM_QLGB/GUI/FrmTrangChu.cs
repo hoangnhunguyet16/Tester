@@ -89,6 +89,13 @@ namespace GUI
             HideSubMenu();
         }
 
+        private void btnDSDatBao_Click(object sender, EventArgs e)
+        {
+            FrmDSDatBao frm = new FrmDSDatBao();
+            utl.LoadChildForm(frm, pnlMain);
+            HideSubMenu();
+        }
+
         private void btnDatBao_Click(object sender, EventArgs e)
         {
             FrmDatBao frm = new FrmDatBao((int)tk.MaNV);

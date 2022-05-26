@@ -19,10 +19,21 @@ namespace BLL
             return dbDAL.GetDLDatBao();
         }
 
+        public List<view_DanhSachDatBao> LoadDLDSDatBao()
+        {
+            return dbDAL.GetDLDSDatBao();
+        }
+
         public List<DatBao> LoadDLDatBaoTheoTenKH(string tenKH)
         {
             return dbDAL.GetDLDatBaoTheoTenKH(tenKH);
         }
+
+        public List<view_DanhSachDatBao> LoadDLDSDatBaoTheoTenKH(string tenKH)
+        {
+            return dbDAL.GetDLDSDatBaoTheoTenKH(tenKH);
+        }
+
 
         public int LoadDLGetDLMaDatBaoCuoiCung()
         {

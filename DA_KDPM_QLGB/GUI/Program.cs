@@ -19,7 +19,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDatBao(1));
+            Application.Run(SelectStartupForm());
         }
 
         /// <summary>

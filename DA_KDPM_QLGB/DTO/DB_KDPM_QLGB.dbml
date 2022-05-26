@@ -80,4 +80,25 @@
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.view_DanhSachDatBao" Member="view_DanhSachDatBaos">
+    <Type Name="view_DanhSachDatBao">
+      <Column Name="MaDatBao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ChiTietDatBao" Member="view_ChiTietDatBaos">
+    <Type Name="view_ChiTietDatBao">
+      <Column Name="MaDatBao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiBao" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GiaTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

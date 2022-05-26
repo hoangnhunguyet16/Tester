@@ -20,10 +20,20 @@ namespace DAL
             return dt.DatBaos.ToList();
         }
 
+        public List<view_DanhSachDatBao> GetDLDSDatBao()
+        {
+            return dt.view_DanhSachDatBaos.ToList();
+        }
+
         public List<DatBao> GetDLDatBaoTheoTenKH(string tenKH)
         {
             KhachHang kh = khDAL.GetDLKhachHangTheoTen(tenKH).Single();
             return dt.DatBaos.Where(t => t.MaKH == kh.MaKH).ToList();
+        }
+
+        public List<view_DanhSachDatBao> GetDLDSDatBaoTheoTenKH(string tenKH)
+        {
+            return dt.view_DanhSachDatBaos.Where(t => t.TenKH.Contains(tenKH)).ToList();
         }
 
         public int GetDLMaDatBaoCuoiCung()

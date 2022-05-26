@@ -19,6 +19,11 @@ namespace BLL
             return ctdbDAL.GetDLChiTietDatBao();
         }
 
+        public List<view_ChiTietDatBao> LoadDLChiTietDatBaoTheoMaDatBao(int maDatBao)
+        {
+            return ctdbDAL.GetDLChiTietDatBaoTheoMaDatBao(maDatBao);
+        }
+
         public List<ChiTietDatBao> LoadDLGetDLChiTietDatBaoTheoMaDB(int maDatBao)
         {
             return ctdbDAL.GetDLChiTietDatBaoTheoMaDB(maDatBao);

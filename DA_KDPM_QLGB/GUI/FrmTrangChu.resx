@@ -218,6 +218,15 @@
         /dECdWF/r4wAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnDSDatBao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAYAAABSx2cSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJ
+        TUUH5QwBCBwC8XvHPAAAAI1JREFUOE/N1D8OQDAYBXAn8udC3MBgdRGjUzgEYTB/s1VXE+8llYgmjbYS
+        hl/U1/eWkkYioqACrmPoYYBEz/i8z5hXXOywQA2jfqcJytuMa+aY38+yl3+UZ2geYM4ot5BCZsF95ozy
+        BusDzBllZ9dyBzkUFtxn7t2ys9cOLOhTBf0kzr4ve18GnteQqAN8N/UwCGdOewAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnKhachHang.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAUCAYAAAB4d5a9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

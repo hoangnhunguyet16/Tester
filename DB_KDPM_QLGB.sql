@@ -121,3 +121,21 @@ from ChiTietDatBao
 group by MaLoaiBao
 
 select * from view_ThongKeSoLuongDatLoaiBao
+
+create view view_DanhSachDatBao as
+SELECT dbo.DatBao.MaDatBao, dbo.DatBao.NgayDat, dbo.KhachHang.TenKH, dbo.NhanVien.TenNV, dbo.DatBao.TongTien, dbo.DatBao.TinhTrang
+FROM dbo.DatBao 
+INNER JOIN
+dbo.KhachHang ON dbo.DatBao.MaKH = dbo.KhachHang.MaKH 
+INNER JOIN
+dbo.NhanVien ON dbo.DatBao.MaNV = dbo.NhanVien.MaNV
+
+select * from view_DanhSachDatBao
+
+create view view_ChiTietDatBao as
+SELECT dbo.ChiTietDatBao.MaDatBao, dbo.LoaiBao.TenLoaiBao, dbo.LoaiBao.GiaTien, dbo.ChiTietDatBao.SoLuong, dbo.ChiTietDatBao.ThanhTien, dbo.ChiTietDatBao.NgayBatDau, dbo.ChiTietDatBao.NgayKetThuc
+FROM dbo.ChiTietDatBao 
+INNER JOIN
+dbo.LoaiBao ON dbo.ChiTietDatBao.MaLoaiBao = dbo.LoaiBao.MaLoaiBao
+
+select * from view_DanhSachDatBao

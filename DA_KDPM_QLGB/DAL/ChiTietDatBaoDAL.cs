@@ -19,6 +19,11 @@ namespace DAL
             return dt.ChiTietDatBaos.ToList();
         }
 
+        public List<view_ChiTietDatBao> GetDLChiTietDatBaoTheoMaDatBao(int maDatBao)
+        {
+            return dt.view_ChiTietDatBaos.Where(t => t.MaDatBao == maDatBao).ToList();
+        }
+
         public List<ChiTietDatBao> GetDLChiTietDatBaoTheoMaDB(int maDatBao)
         {
             return dt.ChiTietDatBaos.Where(t => t.MaDatBao == maDatBao).ToList();

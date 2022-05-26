@@ -49,6 +49,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnDSDatBao = new System.Windows.Forms.Button();
             this.pnlSideMenu.SuspendLayout();
             this.pnlHeThongSubMenu.SuspendLayout();
             this.pnlChucNangSubMenu.SuspendLayout();
@@ -82,7 +83,7 @@
             this.pnlHeThongSubMenu.Controls.Add(this.btnRestore);
             this.pnlHeThongSubMenu.Controls.Add(this.btnBackup);
             this.pnlHeThongSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeThongSubMenu.Location = new System.Drawing.Point(0, 435);
+            this.pnlHeThongSubMenu.Location = new System.Drawing.Point(0, 475);
             this.pnlHeThongSubMenu.Name = "pnlHeThongSubMenu";
             this.pnlHeThongSubMenu.Size = new System.Drawing.Size(214, 120);
             this.pnlHeThongSubMenu.TabIndex = 11;
@@ -152,7 +153,7 @@
             this.btnHeThong.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnHeThong.Image = ((System.Drawing.Image)(resources.GetObject("btnHeThong.Image")));
             this.btnHeThong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 390);
+            this.btnHeThong.Location = new System.Drawing.Point(0, 430);
             this.btnHeThong.Name = "btnHeThong";
             this.btnHeThong.Padding = new System.Windows.Forms.Padding(9, 0, 21, 0);
             this.btnHeThong.Size = new System.Drawing.Size(214, 45);
@@ -169,7 +170,7 @@
             this.pnlChucNangSubMenu.Controls.Add(this.btnThongKe);
             this.pnlChucNangSubMenu.Controls.Add(this.btnDatBao);
             this.pnlChucNangSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlChucNangSubMenu.Location = new System.Drawing.Point(0, 310);
+            this.pnlChucNangSubMenu.Location = new System.Drawing.Point(0, 350);
             this.pnlChucNangSubMenu.Name = "pnlChucNangSubMenu";
             this.pnlChucNangSubMenu.Size = new System.Drawing.Size(214, 80);
             this.pnlChucNangSubMenu.TabIndex = 9;
@@ -220,7 +221,7 @@
             this.btnChucNang.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnChucNang.Image = ((System.Drawing.Image)(resources.GetObject("btnChucNang.Image")));
             this.btnChucNang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChucNang.Location = new System.Drawing.Point(0, 265);
+            this.btnChucNang.Location = new System.Drawing.Point(0, 305);
             this.btnChucNang.Name = "btnChucNang";
             this.btnChucNang.Padding = new System.Windows.Forms.Padding(9, 0, 21, 0);
             this.btnChucNang.Size = new System.Drawing.Size(214, 45);
@@ -253,13 +254,14 @@
             // pnlQuanLySubMenu
             // 
             this.pnlQuanLySubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.pnlQuanLySubMenu.Controls.Add(this.btnDSDatBao);
             this.pnlQuanLySubMenu.Controls.Add(this.btnKhachHang);
             this.pnlQuanLySubMenu.Controls.Add(this.btnNhanVien);
             this.pnlQuanLySubMenu.Controls.Add(this.btnLoaiBao);
             this.pnlQuanLySubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlQuanLySubMenu.Location = new System.Drawing.Point(0, 145);
             this.pnlQuanLySubMenu.Name = "pnlQuanLySubMenu";
-            this.pnlQuanLySubMenu.Size = new System.Drawing.Size(214, 120);
+            this.pnlQuanLySubMenu.Size = new System.Drawing.Size(214, 160);
             this.pnlQuanLySubMenu.TabIndex = 5;
             // 
             // btnKhachHang
@@ -378,6 +380,25 @@
             this.pnlMain.Size = new System.Drawing.Size(972, 681);
             this.pnlMain.TabIndex = 4;
             // 
+            // btnDSDatBao
+            // 
+            this.btnDSDatBao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDSDatBao.FlatAppearance.BorderSize = 0;
+            this.btnDSDatBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDSDatBao.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDSDatBao.Image = ((System.Drawing.Image)(resources.GetObject("btnDSDatBao.Image")));
+            this.btnDSDatBao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDSDatBao.Location = new System.Drawing.Point(0, 120);
+            this.btnDSDatBao.Name = "btnDSDatBao";
+            this.btnDSDatBao.Padding = new System.Windows.Forms.Padding(30, 0, 26, 0);
+            this.btnDSDatBao.Size = new System.Drawing.Size(214, 40);
+            this.btnDSDatBao.TabIndex = 4;
+            this.btnDSDatBao.Text = "Danh sách đặt báo";
+            this.btnDSDatBao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDSDatBao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDSDatBao.UseVisualStyleBackColor = true;
+            this.btnDSDatBao.Click += new System.EventHandler(this.btnDSDatBao_Click);
+            // 
             // FrmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +444,7 @@
         private System.Windows.Forms.Label lblTaiKhoan;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Button btnDSDatBao;
 
 
 
