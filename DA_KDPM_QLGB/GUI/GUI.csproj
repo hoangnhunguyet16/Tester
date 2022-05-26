@@ -82,6 +82,12 @@
     <Compile Include="FrmLoaiBao.Designer.cs">
       <DependentUpon>FrmLoaiBao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRestore.Designer.cs">
+      <DependentUpon>FrmRestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoaiBao.resx">
       <DependentUpon>FrmLoaiBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRestore.resx">
+      <DependentUpon>FrmRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThongKe.resx">
       <DependentUpon>FrmThongKe.cs</DependentUpon>

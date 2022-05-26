@@ -112,6 +112,8 @@ namespace GUI
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
+            FrmRestore frm = new FrmRestore();
+            utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }
 

@@ -174,7 +174,7 @@
             // colThanhTien
             // 
             this.colThanhTien.Text = "Thành tiền";
-            this.colThanhTien.Width = 500;
+            this.colThanhTien.Width = 1200;
             // 
             // btnDatBao
             // 
@@ -200,7 +200,6 @@
             this.lblTongTienThanhToan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTongTienThanhToan.Size = new System.Drawing.Size(103, 16);
             this.lblTongTienThanhToan.TabIndex = 14;
-            this.lblTongTienThanhToan.Text = "12342141";
             // 
             // lblTongTien
             // 
@@ -216,8 +215,7 @@
             // 
             // grbThongTinDB
             // 
-            this.grbThongTinDB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbThongTinDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grbThongTinDB.Controls.Add(this.btnSua);
             this.grbThongTinDB.Controls.Add(this.btnXoa);
             this.grbThongTinDB.Controls.Add(this.btnThem);
@@ -316,8 +314,7 @@
             // 
             // cmbLoaiBao
             // 
-            this.cmbLoaiBao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbLoaiBao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbLoaiBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLoaiBao.FormattingEnabled = true;
             this.cmbLoaiBao.Location = new System.Drawing.Point(107, 36);
@@ -340,8 +337,7 @@
             // 
             // dtpNgayBatDau
             // 
-            this.dtpNgayBatDau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpNgayBatDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayBatDau.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayBatDau.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -411,6 +407,8 @@
             // 
             // grbThongTinKH
             // 
+            this.grbThongTinKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbThongTinKH.Controls.Add(this.label4);
             this.grbThongTinKH.Controls.Add(this.txtDiaChi);
             this.grbThongTinKH.Controls.Add(this.txtSoDienThoai);
@@ -439,6 +437,8 @@
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(153, 157);
             this.txtDiaChi.Name = "txtDiaChi";
@@ -447,6 +447,8 @@
             // 
             // txtSoDienThoai
             // 
+            this.txtSoDienThoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDienThoai.Location = new System.Drawing.Point(153, 117);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
@@ -455,6 +457,8 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(153, 77);
             this.txtEmail.Name = "txtEmail";
@@ -463,6 +467,8 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.Location = new System.Drawing.Point(153, 37);
             this.txtHoTen.Name = "txtHoTen";

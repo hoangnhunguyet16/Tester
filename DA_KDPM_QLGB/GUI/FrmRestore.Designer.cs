@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FrmBackup
+    partial class FrmRestore
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRestore));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlBody = new System.Windows.Forms.Panel();
@@ -38,7 +39,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.prgBarStatus = new System.Windows.Forms.ProgressBar();
             this.txtFilePath = new System.Windows.Forms.TextBox();
-            this.btnBackup = new System.Windows.Forms.Button();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.lblNoiLuuFile = new System.Windows.Forms.Label();
             this.lblLoaiBackup = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(844, 100);
-            this.pnlHeader.TabIndex = 2;
+            this.pnlHeader.TabIndex = 3;
             // 
             // lblHeader
             // 
@@ -69,7 +70,7 @@
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(844, 100);
             this.lblHeader.TabIndex = 13;
-            this.lblHeader.Text = "BACKUP HỆ THỐNG";
+            this.lblHeader.Text = "RESTORE HỆ THỐNG";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlBody
@@ -80,7 +81,7 @@
             this.pnlBody.Location = new System.Drawing.Point(0, 100);
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(844, 481);
-            this.pnlBody.TabIndex = 3;
+            this.pnlBody.TabIndex = 4;
             // 
             // label1
             // 
@@ -92,9 +93,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 164);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Các bước thực hiện để tiến hành backup hệ thống:\r\n- Bước 1: Nhân viên chọn button" +
-    " \"Browse\" để chọn nơi lưu file backup.\r\n- Bước 2: Nhân viên chọn button \"Backup\"" +
-    " để hệ thống tiến hành backup.";
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // grbThongTin
             // 
@@ -103,7 +102,7 @@
             this.grbThongTin.Controls.Add(this.lblStatus);
             this.grbThongTin.Controls.Add(this.prgBarStatus);
             this.grbThongTin.Controls.Add(this.txtFilePath);
-            this.grbThongTin.Controls.Add(this.btnBackup);
+            this.grbThongTin.Controls.Add(this.btnRestore);
             this.grbThongTin.Controls.Add(this.btnBrowse);
             this.grbThongTin.Controls.Add(this.lblNoiLuuFile);
             this.grbThongTin.Controls.Add(this.lblLoaiBackup);
@@ -114,7 +113,7 @@
             this.grbThongTin.Size = new System.Drawing.Size(472, 457);
             this.grbThongTin.TabIndex = 4;
             this.grbThongTin.TabStop = false;
-            this.grbThongTin.Text = "Thông tin backup";
+            this.grbThongTin.Text = "Thông tin restore";
             // 
             // lblPercentage
             // 
@@ -152,20 +151,20 @@
             this.txtFilePath.Size = new System.Drawing.Size(267, 22);
             this.txtFilePath.TabIndex = 10;
             // 
-            // btnBackup
+            // btnRestore
             // 
-            this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.Location = new System.Drawing.Point(391, 117);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(75, 22);
-            this.btnBackup.TabIndex = 6;
-            this.btnBackup.Text = "Backup";
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(76)))), ((int)(((byte)(80)))));
+            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.ForeColor = System.Drawing.Color.White;
+            this.btnRestore.Location = new System.Drawing.Point(391, 117);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(75, 22);
+            this.btnRestore.TabIndex = 6;
+            this.btnRestore.Text = "Restore";
+            this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnBrowse
             // 
@@ -216,15 +215,15 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // FrmBackup
+            // FrmRestore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 581);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.pnlHeader);
-            this.Name = "FrmBackup";
-            this.Text = "Backup";
+            this.Name = "FrmRestore";
+            this.Text = "FrmRestore";
             this.pnlHeader.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
             this.grbThongTin.ResumeLayout(false);
@@ -238,18 +237,17 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pnlBody;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grbThongTin;
+        private System.Windows.Forms.Label lblPercentage;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ProgressBar prgBarStatus;
         private System.Windows.Forms.TextBox txtFilePath;
-        private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label lblNoiLuuFile;
         private System.Windows.Forms.Label lblLoaiBackup;
         private System.Windows.Forms.Label lblDatabase;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.ProgressBar prgBarStatus;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label lblPercentage;
-
     }
 }
