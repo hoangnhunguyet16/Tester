@@ -16,9 +16,11 @@ namespace GUI
     public partial class FrmRestore : Form
     {
         SqlConnection conn = new SqlConnection(Settings.Default.UserConnectionString);
+        string type = "";
 
-        public FrmRestore()
+        public FrmRestore(string type)
         {
+            this.type = type;
             InitializeComponent();
         }
 
@@ -50,10 +52,13 @@ namespace GUI
                 FrmDangNhap frmDN = new FrmDangNhap();
                 frmDN.Show();
 
-                Panel pnl = this.Parent as Panel;
-                pnl.Controls.Clear();
-                Form frm = pnl.Parent as Form;
-                frm.Close();
+                if (type.Equals("default"))
+                {
+                    Panel pnl = this.Parent as Panel;
+                    pnl.Controls.Clear();
+                    Form frm = pnl.Parent as Form;
+                    frm.Close();
+                }
             }
         }
 

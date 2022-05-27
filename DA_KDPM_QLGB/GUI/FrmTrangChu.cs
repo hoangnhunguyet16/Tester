@@ -119,7 +119,7 @@ namespace GUI
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            FrmRestore frm = new FrmRestore();
+            FrmRestore frm = new FrmRestore("default");
             utl.LoadChildForm(frm, pnlMain);
             HideSubMenu();
         }

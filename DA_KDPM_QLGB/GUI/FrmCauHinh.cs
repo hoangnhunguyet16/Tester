@@ -19,6 +19,7 @@ namespace GUI
     public partial class FrmCauHinh : Form
     {
         ConnectDB connDB;
+        TaiKhoanBLL tkBLL = new TaiKhoanBLL();
         string config = "";
         bool flag;
 
@@ -117,8 +118,19 @@ namespace GUI
         {
             if (config.Equals("modify"))
             {
+                Form frm;
+
+                if (tkBLL.CheckDuLieuTaiKhoan() <= 0)
+                {
+                    MessageBox.Show("Dữ liệu hệ thống bị thiếu hoặc lỗi. Tiến hành restore.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    frm = new FrmRestore("modify");
+                }
+                else
+                {
+                    frm = new FrmDangNhap();
+                }
+
                 this.Hide();
-                FrmDangNhap frm = new FrmDangNhap();
                 frm.Closed += (s, args) => this.Close();
                 frm.Show();
             }

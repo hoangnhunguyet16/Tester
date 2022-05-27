@@ -18,5 +18,10 @@ namespace BLL
         {
             return tkDAL.GetTaiKhoan(tenDangNhap, matKhau);
         }
+
+        public int CheckDuLieuTaiKhoan()
+        {
+            return tkDAL.CheckDuLieuTaiKhoan();
+        }
     }
 }

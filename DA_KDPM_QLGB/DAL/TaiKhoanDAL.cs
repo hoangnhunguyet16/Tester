@@ -18,5 +18,10 @@ namespace DAL
         {
             return dt.TaiKhoans.Where(t => t.TenDangNhap.Equals(tenDangNhap) && t.MatKhau.Equals(matKhau)).FirstOrDefault();
         }
+
+        public int CheckDuLieuTaiKhoan()
+        {
+            return dt.TaiKhoans.ToList().Count;
+        }
     }
 }
