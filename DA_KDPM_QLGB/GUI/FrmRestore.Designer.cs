@@ -223,7 +223,8 @@
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.pnlHeader);
             this.Name = "FrmRestore";
-            this.Text = "FrmRestore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Restore";
             this.pnlHeader.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
             this.grbThongTin.ResumeLayout(false);

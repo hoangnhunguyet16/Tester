@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjectSettings;
 using DTO;
+using BLL;
 using System.IO;
 
 namespace GUI
@@ -34,7 +35,7 @@ namespace GUI
         static Form SelectStartupForm()
         {
             var frm = (dynamic)null;
-
+            TaiKhoanBLL tkBLL = new TaiKhoanBLL();
             if (Helper.CheckUserConfig() != 0)
             {
                 if (File.Exists("connect-db.dba"))
@@ -45,6 +46,10 @@ namespace GUI
                     if (!connDB.CheckDatabase())
                     {
                         frm = new FrmCauHinh("modify");
+                    }
+                    else if (tkBLL.CheckDuLieuTaiKhoan() <= 0)
+                    {
+                        frm = new FrmRestore("modify");
                     }
                     else
                     {

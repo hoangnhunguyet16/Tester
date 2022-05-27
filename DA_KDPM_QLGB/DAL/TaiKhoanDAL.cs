@@ -21,7 +21,14 @@ namespace DAL
 
         public int CheckDuLieuTaiKhoan()
         {
-            return dt.TaiKhoans.ToList().Count;
+            try
+            {
+                return (int)dt.TaiKhoans.ToList().Count;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
     }
 }

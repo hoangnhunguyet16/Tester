@@ -59,6 +59,10 @@ namespace GUI
                     Form frm = pnl.Parent as Form;
                     frm.Close();
                 }
+                else
+                {
+                    this.Close();
+                }
             }
         }
 
@@ -101,10 +105,9 @@ namespace GUI
                 cmd3.ExecuteNonQuery();
                 conn.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng lưu file tại ổ đĩa khác", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show(ex.Message.ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }
