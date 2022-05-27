@@ -103,6 +103,8 @@ namespace GUI
             }
             catch (Exception)
             {
+                MessageBox.Show("Vui lòng lưu file tại ổ đĩa khác", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
                 throw;
             }
         }
